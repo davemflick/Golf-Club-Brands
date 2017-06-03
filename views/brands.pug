@@ -1,13 +1,17 @@
 extends layout
 
 block content
-	h1 Brands Page
-	.brandNameContainer
-		ul
-		for brand in brands
-			li= brand.name
-			li= brand.rank
-			img(src=brand.image, width="300px")
-			ol
-			for comment in brand.comments
-				li= comment
+	h1.ui.huge.header My Top Golf Brands
+
+	.ui.top.attached.segment
+		.ui.divided.items
+			for brand in brands
+				.item
+					.image
+						img(src=brand.image)
+					.content
+						h3.header= brand.name
+						.meta
+							span.cinema= brand.created.toDateString()
+						.description
+							p= "I currently rank this at " + brand.rank + "/10"

@@ -2,6 +2,13 @@ doctype html
 html
 	head
 		title= title
+		link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css")
 		link(rel="stylesheet", href="/stylesheets/main.css")
-	body
+	body.container
+		.ui.menu
+			a(href="/").header.item Home
+			a(href="/brands").item Brands
+			.right.menu
+				a.item SignUp/LogIn
+				a.item Help
 		block content
