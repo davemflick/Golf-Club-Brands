@@ -1,0 +1,32 @@
+{
+  "name": "golf-brands",
+  "version": "1.0.0",
+  "description": "A look at golf brands using all 7 RESTful routes",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davemflick/Golf-Club-Brands.git"
+  },
+  "keywords": [
+    "Node",
+    "Express",
+    "Pug",
+    "RESTful"
+  ],
+  "author": "David Flick",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/davemflick/Golf-Club-Brands/issues"
+  },
+  "homepage": "https://github.com/davemflick/Golf-Club-Brands#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "method-override": "^2.3.9",
+    "mongoose": "^4.10.4",
+    "pug": "^2.0.0-rc.2"
+  }
+}

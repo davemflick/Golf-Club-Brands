@@ -1,0 +1,13 @@
+extends layout
+
+block content
+	h1 Brands Page
+	.brandNameContainer
+		ul
+		for brand in brands
+			li= brand.name
+			li= brand.rank
+			img(src=brand.image, width="300px")
+			ol
+			for comment in brand.comments
+				li= comment
