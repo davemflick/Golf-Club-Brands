@@ -4,11 +4,17 @@ html
 		title= title
 		link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css")
 		link(rel="stylesheet", href="/stylesheets/main.css")
-	body.container
-		.ui.menu
-			a(href="/").header.item Home
-			a(href="/brands").item Brands
-			.right.menu
-				a.item SignUp/LogIn
-				a.item Help
-		block content
+	body
+		.container
+			.ui.menu
+				a(href="/").header.item Home
+				a(href="/brands").item Brands
+				a(href="/brands/new").item Add Brand
+				.right.menu
+					a.item SignUp/LogIn
+					a.item Help
+		.bufferCont
+
+	block content
+
+	include footer

@@ -1,7 +1,41 @@
 body{
 	background-color: #ddd;
+	text-align: center;
 }
 
-.brandNameContainer {
+.innerContainer {
+	width: 75%;
 	margin: 0 auto;
+}
+
+.bufferCont {
+	height: 50px;
+}
+
+.ui.comments {
+	text-align: left;
+}
+
+.item.about{
+	margin: 2.0em;
+}
+
+.ui.button {
+	margin-top: 20px;
+}
+
+.deleteBtnForm{
+	display: inline;
+}
+
+.ui.orange.labled.submit.button.addComment {
+	margin-bottom: 5px;
+	float: left;
+}
+
+.footer {
+	width: 100%;
+	padding: 25px;
+	margin-top: 30px;
+	background-color: white;
 }

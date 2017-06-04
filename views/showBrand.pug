@@ -1,18 +1,27 @@
 extends layout
 
 block content
-	.ui.segment
-		h3.ui.huge.header.centered= brand.name
-		.image
-			img(src=brand.image).ui.centered.medium.image
-		.description
-			p= "I currently rank this at " + brand.rank + "/10"
-		.ui.comments
-			.ui.dividing.header Comments
-			for com in brand.comments
-				p= com
-				.meta
-					span.cinema= brand.created.toDateString()
-				hr
+	.innerContainer
+		.ui.segment
+			h3.ui.huge.header.centered= brand.name
+			.image
+				img(src=brand.image).ui.centered.medium.image.rounded
+			.description
+				p= "I currently rank this at " + brand.rank + "/10"
+			.item.about
+				p= brand.about
+			.ui.comments
+				.ui.dividing.header Comments
+				for com in brand.comments
+					p= com
+					.meta
+						span.cinema= brand.created.toDateString()
+					hr
+			form(action="/brands/"+brand._id+"?_method=PUT", method="POST").ui.reply.form
+				.field
+					button.ui.orange.labled.submit.button.addComment Add Comment
+				.field
+					textarea(placeholder="Leave a Comment!", name="comments")
 
-					
+				
+				
