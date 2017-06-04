@@ -37,7 +37,20 @@ app.get("/brands", (req, res)=>{
 	Brand.find({}, (err, brand)=>{
 		return err ? console.log(err) : res.render("brands", {brands: brand});
 	})
-	
+});
+
+//CREATE ROUTE
+
+//SHOW ROUTE
+app.get("/brands/:id", (req,res)=>{
+	Brand.findById(req.params.id, (err, brand)=>{
+		if(err){
+			alert("Something went wrong");
+			res.redirect("/brand");
+		} else {
+			res.render("showBrand", {brand: brand});
+		}
+	});
 });
 
 

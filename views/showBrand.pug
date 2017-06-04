@@ -1,0 +1,13 @@
+extends layout
+
+block content
+	.ui.segment
+		h3.ui.huge.header.centered= brand.name
+		.image
+			img(src=brand.image).ui.centered.medium.image
+		.meta
+			span.cinema= brand.created.toDateString()
+		.description
+			p= "I currently rank this at " + brand.rank + "/10"
+
+					
