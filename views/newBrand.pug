@@ -1,0 +1,18 @@
+extends layout
+
+block content
+	.ui.container
+		form(action="/brands", method="POST").ui.form
+			.field
+				label Brand Name
+				input(type="text", name="name", placeholder="Brand")
+			.field
+				label Brand Image
+				input(type="text", name="image", placeholder="URL")
+			.field
+				label Brand Ranking
+				input(type="text", name="rank", placeholder="Rank")
+			.field
+				label About Brand
+				textarea(name="about", placeholder="About")
+			button(type="submit").ui.blue.button.inverse Submit

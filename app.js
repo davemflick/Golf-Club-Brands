@@ -15,7 +15,8 @@ var golfBrandSchema = new mongoose.Schema(
 	name: String,
 	image:{type: String, default: "http://www.orchidislandgolfandbeachclub.com/images/dynamic/getImage.gif?ID=3884041"},
 	rank: Number,
-	comments: Array,
+	comments: {type:Array, default: []},
+	about: String,
 	created: {type: Date, default: Date.now}
 });
 var Brand = mongoose.model("Brand", golfBrandSchema);
@@ -39,7 +40,25 @@ app.get("/brands", (req, res)=>{
 	})
 });
 
+//NEW ROUTE
+app.get("/brands/new", (req, res)=>{
+	res.render("newBrand");
+});
+
+
 //CREATE ROUTE
+app.post("/brands", (req, res)=>{
+	Brand.create(req.body, (err, brand)=>{
+		if(err){
+			alert("something went wrong on submit");
+			console.log(err);
+			res.redirect("/brands");
+		} else {
+			res.redirect("/brands");
+		}
+	})
+
+});
 
 //SHOW ROUTE
 app.get("/brands/:id", (req,res)=>{
