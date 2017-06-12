@@ -13,6 +13,7 @@ var Comment = require("./models/comments");
 var User = require("./models/user");
 
 //Routes
+mongoose.connect("mongodb://localhost/golf_brands_app");
 var brandRoutes = require("./routes/brands");
 var commentsRoutes = require("./routes/comments");
 var authRoutes = require("./routes/auth");
@@ -27,12 +28,25 @@ app.use(bodyParser.urlencoded({extended: true}));
 //Set up Method-Override
 app.use(methodOverride("_method"));
 
+//Express-session set up
+app.use(require("express-session")({
+	secret: "My secret message",
+	resave: false,
+	saveUninitialized: false
+}));
+
 //Set up passport
 app.use(passport.initialize());
 app.use(passport.session());
 passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
+
+//middleware to determine if user is logged in or not, pass to every template
+app.use((req,res,next)=>{
+	res.locals.currentUser = req.user;
+	next();
+});
 
 
 //HOME PAGE

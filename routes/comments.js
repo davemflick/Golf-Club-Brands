@@ -3,7 +3,7 @@ var router = express.Router(); //Add {mergeParams: true} to parameter if you wan
 var Brand = require("../models/brand");
 var Comment = require("../models/comments");
 
-router.get("brands/:id", (req,res)=>{
+router.get("brands/:id", isLoggedIn, (req,res)=>{
 	Brand.findById(req.params.id, (err, brand)=>{
 		if(err){
 			console.log(err);
@@ -11,13 +11,44 @@ router.get("brands/:id", (req,res)=>{
 			res.render("brands/" + req.params.id);
 		}
 	});
-})
+});
+
+router.post("/brands/:id/comments", isLoggedIn, (req, res)=>{
+	Brand.findById(req.params.id, (err, brand)=>{
+		if(err){
+			console.log(err);
+			res.redirect("/brands");
+		} else {
+			Comment.create(req.body.comment, (err, comment)=>{
+				console.log(comment)
+				if(err){
+					console.log(err);
+				} else {
+					//add username and id to comments and save
+					comment.author.id = req.user._id;
+					comment.author.username = req.user.username;
+					comment.text = comment;
+					comment.save();
+					//put comments into brand page
+					brand.comment.push(comment);
+					brand.save();
+					res.redirect("/brands/"+ brand._id)
+				}
+			});
+		}
+	});
+});
 
 
 
 
-
-
+//check if person is logged in (middleware function)
+function isLoggedIn(req, res, next){
+	if(req.isAuthenticated()){
+		return next();
+	}
+	res.redirect("/login");
+}
 
 module.exports = router;
 

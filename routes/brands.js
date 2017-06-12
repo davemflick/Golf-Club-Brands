@@ -35,7 +35,7 @@ router.post("/brands", (req, res)=>{
 
 //SHOW ROUTE
 router.get("/brands/:id", (req,res)=>{
-	Brand.findById(req.params.id, (err, brand)=>{
+	Brand.findById(req.params.id).populate("comments").exec((err, brand)=>{
 		if(err){
 			alert("Something went wrong");
 			res.redirect("/brand");
@@ -63,11 +63,8 @@ router.put("/brands/:id", (req,res)=>{
 	Brand.findByIdAndUpdate(req.params.id, req.body, (err, brand)=>{
 		if(err){
 			alert("Something went wrong");
-			res.redirect("/brand");
+			res.redirect("/brands");
 		} else {
-			if(req.body.comments){
-				brand.comments.push(req.body.comments);
-			}
 			res.redirect("/brands/" + req.params.id);
 		}
 	});
