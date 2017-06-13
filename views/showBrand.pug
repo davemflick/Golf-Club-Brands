@@ -10,7 +10,7 @@ block content
 				p= "I currently rank this at " + brand.rank + "/10"
 			.item.about
 				p= brand.about
-			.ui.comments
+			.ui.comments#commentList
 				.ui.dividing.header Comments
 				each comment in brand.comments
 					p= comment.author.username

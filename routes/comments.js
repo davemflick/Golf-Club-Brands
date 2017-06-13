@@ -4,15 +4,6 @@ var Brand = require("../models/brand");
 var Comment = require("../models/comments");
 var bodyParser = require("body-parser");
 
-// router.get("brands/:id", isLoggedIn, (req,res)=>{
-// 	Brand.findById(req.params.id, (err, brand)=>{
-// 		if(err){
-// 			console.log(err);
-// 		} else {
-// 			res.render("brands/" + req.params.id);
-// 		}
-// 	});
-// });
 
 router.post("/brands/:id/comments", isLoggedIn, (req, res)=>{
 	Brand.findById(req.params.id, (err, brand)=>{
@@ -33,7 +24,7 @@ router.post("/brands/:id/comments", isLoggedIn, (req, res)=>{
 					// // //put comments into brand page
 					brand.comments.push(comment);
 					brand.save();
-					res.redirect("/brands/"+ brand._id)
+					res.redirect("/brands/"+ brand._id +"/#commentList")
 				}
 			});
 		}
