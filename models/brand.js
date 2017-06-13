@@ -3,7 +3,6 @@ var mongoose = require("mongoose");
 var Comment = require("./comments");
 
 
-
 var golfBrandSchema = new mongoose.Schema(
 {
 	name: String,

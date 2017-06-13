@@ -12,8 +12,8 @@ block content
 				p= brand.about
 			.ui.comments
 				.ui.dividing.header Comments
-				for comment in brand.comments
-					p= comment.author
+				each comment in brand.comments
+					p= comment.author.username
 					p= comment.text
 					.meta
 						span.cinema= brand.created.toDateString()
@@ -22,7 +22,7 @@ block content
 				.field
 					button.ui.orange.labled.submit.button.addComment Add Comment
 				.field
-					textarea(placeholder="Leave a Comment!", name="comment")
+					textarea(placeholder="Leave a Comment!", name="comment[text]")
 
 				
 				
