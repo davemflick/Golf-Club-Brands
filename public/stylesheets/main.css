@@ -6,6 +6,14 @@ body{
 	position: relative;
 }
 
+.homeTitle.huge.header {
+	color: green;
+}
+
+.container.segment.homeCont{
+	
+}
+
 .mainContainer{
 	margin-bottom: 5px;
 	height: 100%;
