@@ -11,9 +11,12 @@ html
 				a(href="/brands").item Brands
 				a(href="/brands/new").item Add Brand
 				.right.menu
-					a(href="/register").item Sign Up
-					a(href="/login").item Login
-					a(href="/logout").item Logout
+					-if(!currentUser){
+						a(href="/register").item Sign Up
+						a(href="/login").item Login
+					-} else {
+						a(href="/logout").item Logout
+					-}
 					a(href="#").item Help
 		.bufferCont
 		.mainContainer
