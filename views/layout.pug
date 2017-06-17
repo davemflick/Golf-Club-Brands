@@ -15,6 +15,7 @@ html
 						a(href="/register").item Sign Up
 						a(href="/login").item Login
 					-} else {
+						h5.header.item= "Signed in as " + currentUser.username
 						a(href="/logout").item Logout
 					-}
 					a(href="#").item Help
