@@ -4,8 +4,9 @@ body.body{
 	text-align: center;
 	height: auto;
 }
-.red {
-	font-size: 30px;
+
+.buffer {
+	height: 50px;
 }
 
 .ui.container.homeBanner{
@@ -36,7 +37,7 @@ body.body{
 
 
 .mainContainer{
-	margin-bottom: 5px !important;
+	margin-bottom: 5px;
 	height: 100%;
 }
 
