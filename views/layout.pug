@@ -4,7 +4,7 @@ html
 		title= title
 		link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css")
 		link(rel="stylesheet", href="/stylesheets/main.css")
-	body
+	body.body
 		.container
 			.ui.menu
 				a(href="/").header.item Home
@@ -19,8 +19,7 @@ html
 						a(href="/logout").item Logout
 					-}
 					a(href="#").item Help
-		.bufferCont
 		.mainContainer
 			block content
-
 		include footer
+		script(src="/JavaScript/main.js")
