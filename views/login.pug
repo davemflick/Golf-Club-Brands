@@ -1,8 +1,15 @@
 extends layout
 
 block content
-	h1 Login
-	form(action="/login", method="POST")
-		input(type="text", name="username", placeholder="username")
-		input(type="password", name="password", placeholder="password")
-		input(type="submit")
+	.buffer
+	h1.ui.huge.header Login
+	.ui.login
+		form(action="/login", method="POST").ui.form
+			.field.inline.loginpage
+				label.login Username
+				input(type="text", name="username", placeholder="username")
+			.field.inline.loginpage
+				label.login Password
+				input(type="password", name="password", placeholder="password")
+			.field
+				input(type="submit").ui.button.inverse.teal

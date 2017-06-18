@@ -3,7 +3,13 @@ extends layout
 block content
 	.buffer
 	h1 Register
-	form(action="/register", method="POST")
-		input(type="text", name="username", placeholder="username")
-		input(type="password", name="password", placeholder="password")
-		input(type="submit")
+	.ui.register
+		form(action="/register", method="POST").ui.form
+			.field.inline
+				label.login Username
+				input(type="text", name="username", placeholder="username")
+			.field.inline
+				label.login Password
+				input(type="password", name="password", placeholder="password")
+			.field
+				input(type="submit").ui.button.inverse.teal
