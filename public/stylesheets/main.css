@@ -1,4 +1,8 @@
 
+html {
+	height: 130vh;
+}
+
 body.body{
 	background-image: url('https://cdn.pixabay.com/photo/2014/07/21/10/28/landscape-398500_1280.jpg');
 	background-size: cover;
@@ -10,9 +14,14 @@ body.body{
 	height: 50px;
 }
 
+.showDiv{
+	height: 100%
+	margin-bottom: 100px;
+}
+
 .ui.container.homeBanner{
 	width: 100%;
-	height: 90vh;
+	height: 100vh;
 	margin-bottom: 0;
 	background-image: url("https://cdn.pixabay.com/photo/2017/03/20/12/02/golf-2158897_1280.jpg");
 	background-size: cover;
@@ -54,12 +63,21 @@ label.login {
 
 .innerContainer {
 	width: 75%;
+	height: 100vh;
+	margin: 0 auto 50px auto;
+}
+
+.ui.segment.show {
 	height: 100%;
-	margin: 0 auto;
+	padding: 20px;
 }
 
 .ui.comments {
 	text-align: left;
+}
+.commentContainer {
+	height: 100%;
+	display: block;
 }
 
 .item.about{
@@ -83,7 +101,6 @@ label.login {
 	width: 100%;
 	bottom: 0;
 	padding: 15px;
-	position: relative;
 }
 
 .goToBrands{
