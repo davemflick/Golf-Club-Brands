@@ -1,6 +1,6 @@
 
 html {
-	height: 130vh;
+	height: 100vh;
 	padding-bottom: 0;
 }
 
@@ -8,7 +8,7 @@ body.body{
 	background-image: url('https://cdn.pixabay.com/photo/2014/07/21/10/28/landscape-398500_1280.jpg');
 	background-size: cover;
 	text-align: center;
-	height: 130vh;
+	height: 100vh;
 	padding-bottom: 0;
 }
 
