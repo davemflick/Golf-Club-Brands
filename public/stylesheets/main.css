@@ -109,6 +109,16 @@ h1.golfBrands {
 	float: left;
 }
 
+.commentAuthor {
+	font-weight: bold;
+	font-size: 1.2em;
+}
+
+span.cinema.commentDate {
+	font-size: 0.8em;
+	font-weight: lighter;
+}
+
 .footer{
 	width: 100%;
 	padding: 15px;

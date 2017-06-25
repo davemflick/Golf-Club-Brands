@@ -15,10 +15,10 @@ block content
 				.ui.comments#commentList
 					.ui.dividing.header Comments
 					each comment in brand.comments
-						p= comment.author.username
+						p.commentAuthor= comment.author.username + " - "
+							span.cinema.commentDate= brand.created.toDateString()
 						p= comment.text
-						.meta
-							span.cinema= brand.created.toDateString()
+						
 						hr
 				form(action="/brands/"+brand._id+"/comments" , method="POST").ui.reply.form
 					.field
