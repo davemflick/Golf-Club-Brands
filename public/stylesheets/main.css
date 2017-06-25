@@ -82,6 +82,11 @@ label.login {
 	display: block;
 }
 
+h1.golfBrands {
+	font-size: 4em;
+	color: #eee;
+}
+
 .item.about{
 	margin: 2.0em;
 }
@@ -92,6 +97,11 @@ label.login {
 
 .deleteBtnForm{
 	display: inline;
+}
+
+.ui.top.attached.segment {
+	border-radius: 25px;
+	padding: 30px 15px;
 }
 
 .ui.orange.labled.submit.button.addComment {

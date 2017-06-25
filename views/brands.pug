@@ -2,22 +2,23 @@ extends layout
 
 block content
 	.buffer
-	h1.ui.huge.header My Top Golf Brands
+	h1.golfBrands Golf Brands
 	.innerContainer
-		.ui.top.attached.segment
-			.ui.divided.items
-				for brand in brands
-					.item
-						.image
-							img(src=brand.image)
-						.content
-							h3.header= brand.name
-							.meta
-								span.cinema= brand.created.toDateString()
-							.description
-								p= "I currently rank this at " + brand.rank + "/" + brands.length
-							a(href="/brands/"+brand._id).ui.green.invert.button Discuss
-							a(href="/brands/"+brand._id+"/edit").ui.yellow.invert.button Edit
-							form(action="/brands/"+brand.id+"?_method=DELETE", method="POST").deleteBtnForm
-								button.ui.red.invert.button Delete
+		for brand in brands
+			.ui.top.attached.segment
+				.ui.divided.items
+						.item.brandContainer
+							.image
+								img(src=brand.image)
+							.content
+								h3.header.huge= brand.name
+								.meta
+									span.cinema= brand.created.toDateString()
+								.description
+									p= "I currently rank this at " + brand.rank + "/" + brands.length
+								.item.buttons
+									a(href="/brands/"+brand._id).ui.green.invert.button Discuss
+									a(href="/brands/"+brand._id+"/edit").ui.yellow.invert.button Edit
+									form(action="/brands/"+brand.id+"?_method=DELETE", method="POST").deleteBtnForm
+										button.ui.red.invert.button Delete
 
