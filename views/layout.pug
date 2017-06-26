@@ -18,8 +18,11 @@ html
 						h5.header.item= "Signed in as " + currentUser.username
 						a(href="/logout").item Logout
 					-}
-					a(href="#").item Help
+					a.item.help Help
 		.mainContainer
 			block content
-	
+			include help
+
+		script(src="https://code.jquery.com/jquery-3.2.1.min.js")
+		script(src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.js")
 		script(src="/JavaScript/main.js")
