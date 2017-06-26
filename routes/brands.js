@@ -19,7 +19,7 @@ router.get("/brands/new", isLoggedIn, (req, res)=>{
 
 //CREATE ROUTE --> New brand
 router.post("/brands",  (req, res)=>{
-	if(req.body.image === ""){req.body.image = golfBrandSchema.image;}
+	if(req.body.image === ""){req.body.image = Brand.image;}
 	Brand.create(req.body, (err, brand)=>{
 		if(err){
 			alert("something went wrong on submit");
