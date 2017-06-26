@@ -11,14 +11,14 @@ router.get("/brands", (req, res)=>{
 });
 
 //NEW ROUTE
-router.get("/brands/new", (req, res)=>{
+router.get("/brands/new", isLoggedIn, (req, res)=>{
 	res.render("newBrand");
 });
 
 
 
 //CREATE ROUTE --> New brand
-router.post("/brands", (req, res)=>{
+router.post("/brands",  (req, res)=>{
 	if(req.body.image === ""){req.body.image = golfBrandSchema.image;}
 	Brand.create(req.body, (err, brand)=>{
 		if(err){
@@ -46,7 +46,7 @@ router.get("/brands/:id", (req,res)=>{
 });
 
 //EDIT UPDATE
-router.get("/brands/:id/edit", (req,res)=>{
+router.get("/brands/:id/edit", isLoggedIn, (req,res)=>{
 	Brand.findById(req.params.id, (err, brand)=>{
 		if(err){
 			alert("Something went wrong");
@@ -84,5 +84,12 @@ router.delete("/brands/:id",(req,res)=>{
 	});
 });
 
+//Middleware to check if logged in
+function isLoggedIn(req, res, next){
+	if(req.isAuthenticated()){
+		return next();
+	}
+	res.redirect("/login");
+}
 
 module.exports = router;
