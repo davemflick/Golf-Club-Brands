@@ -1,8 +1,9 @@
 const instructions = document.getElementsByClassName("inst");
 
-console.log(instructions)
-
 let slideIn = 0;
+
+
+
 function instructionSlide(){
 	let inLen = instructions.length
 	for(let i=0; i< inLen; i++){
@@ -15,14 +16,14 @@ function instructionSlide(){
 	instructions[slideIn-1].style.display = "block";
 	setTimeout(instructionSlide, 2700)
 }
+//Only run instructionsSlide on home page
+if(window.location.pathname == "/"){
+	instructionSlide();
+}
 
-instructionSlide();
 
-
-
-
+//Pop up the help modal
 $(document).ready(function(){
-
 	$('.help').click(function(){
 		$('.ui.modal').modal('show');
 	})	

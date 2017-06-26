@@ -19,9 +19,15 @@ html
 						a(href="/logout").item Logout
 					-}
 					a.item.help Help
+		.ui.modal
+			.header Help
+			ul
+				li You don't need any help
+
 		.mainContainer
 			block content
-			include help
+				
+			
 
 		script(src="https://code.jquery.com/jquery-3.2.1.min.js")
 		script(src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.js")
