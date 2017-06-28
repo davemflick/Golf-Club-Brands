@@ -13,7 +13,9 @@ var Comment = require("./models/comments");
 var User = require("./models/user");
 
 //Routes
-mongoose.connect("mongodb://localhost/golf_brands_app");
+
+//mongoose.connect(process.env.DATABASEURL);
+mongoose.connect("mongodb://dave:finland@ds139342.mlab.com:39342/golf_brands_app")
 var brandRoutes = require("./routes/brands");
 var commentsRoutes = require("./routes/comments");
 var authRoutes = require("./routes/auth");
@@ -60,7 +62,7 @@ app.use(commentsRoutes);
 app.use(authRoutes);
 
 
-app.listen(3000 || process.env.PORT, process.env.IP, ()=>{
+app.listen(process.env.PORT || 3000, process.env.IP, ()=>{
 	console.log("Golf Brands Server is connected");
 });
 
