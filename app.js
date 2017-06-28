@@ -13,9 +13,8 @@ var Comment = require("./models/comments");
 var User = require("./models/user");
 
 //Routes
-
-//mongoose.connect(process.env.DATABASEURL);
-mongoose.connect("mongodb://dave:finland@ds139342.mlab.com:39342/golf_brands_app")
+var URL = process.env.DATABASEURL || 'mongodb://localhost/golf_brands_app';
+mongoose.connect(URL);
 var brandRoutes = require("./routes/brands");
 var commentsRoutes = require("./routes/comments");
 var authRoutes = require("./routes/auth");
