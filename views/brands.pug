@@ -15,7 +15,7 @@ block content
 								.meta
 									span.cinema= brand.created.toDateString()
 								.description
-									p= "I currently rank this at " + brand.rank + "/" + brands.length
+									p= "Rank: " + brand.rank
 								.item.buttons
 									a(href="/brands/"+brand._id).ui.green.invert.button Discuss
 									if currentUser && brand.author.id.equals(currentUser._id) 
