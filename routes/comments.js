@@ -3,6 +3,10 @@ var router = express.Router(); //Add {mergeParams: true} to parameter if you wan
 var Brand = require("../models/brand");
 var Comment = require("../models/comments");
 var bodyParser = require("body-parser");
+var middleware = require("../middleware");
+
+//Middleware
+let isLoggedIn = middleware.isLoggedIn;
 
 
 router.post("/brands/:id/comments", isLoggedIn, (req, res)=>{
@@ -31,16 +35,6 @@ router.post("/brands/:id/comments", isLoggedIn, (req, res)=>{
 	});
 });
 
-
-
-
-//check if person is logged in (middleware function)
-function isLoggedIn(req, res, next){
-	if(req.isAuthenticated()){
-		return next();
-	}
-	res.redirect("/login");
-}
 
 module.exports = router;
 

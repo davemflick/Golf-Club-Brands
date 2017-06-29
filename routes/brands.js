@@ -1,6 +1,10 @@
 var express = require("express");
 var router =  express.Router();
 var Brand = require("../models/brand");
+var middleware = require("../middleware");
+
+//Middleware
+let isLoggedIn = middleware.isLoggedIn;
 
 //INDEX ROUTE
 router.get("/brands", (req, res)=>{
@@ -84,12 +88,5 @@ router.delete("/brands/:id",(req,res)=>{
 	});
 });
 
-//Middleware to check if logged in
-function isLoggedIn(req, res, next){
-	if(req.isAuthenticated()){
-		return next();
-	}
-	res.redirect("/login");
-}
 
 module.exports = router;
