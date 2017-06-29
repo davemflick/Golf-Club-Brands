@@ -7,6 +7,7 @@ var middleware = require("../middleware");
 
 //Middleware
 let isLoggedIn = middleware.isLoggedIn;
+let checkCommentCreator = middleware.checkCommentCreator;
 
 
 router.post("/brands/:id/comments", isLoggedIn, (req, res)=>{
@@ -31,6 +32,16 @@ router.post("/brands/:id/comments", isLoggedIn, (req, res)=>{
 					res.redirect("/brands/"+ brand._id +"/#commentList")
 				}
 			});
+		}
+	});
+});
+
+router.delete("/brands/:id/comments/:comment_id", (req, res)=>{
+	Comment.findByIdAndRemove(req.params.comment_id, (err)=>{
+		if(err){
+			res.redirect("back");
+		} else {
+			res.redirect("back")
 		}
 	});
 });

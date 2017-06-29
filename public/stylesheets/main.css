@@ -120,14 +120,32 @@ h1.golfBrands {
 	padding: 30px 15px;
 }
 
+/*COMMENTS*/
 .ui.orange.labled.submit.button.addComment {
 	margin-bottom: 5px;
 	float: left;
 }
 
+.comAuthDel {
+	display: flex;
+	justify-content: space-between;
+	padding: 3px;
+}
+
 .commentAuthor {
 	font-weight: bold;
 	font-size: 1.2em;
+	width: 70%;
+	margin-bottom: 0;
+}
+
+.delComForm {
+	width: 20%;
+	text-align: right;
+}
+
+.ui.button.deleteComment {
+	margin-top: 0;
 }
 
 span.cinema.commentDate {

@@ -14,10 +14,13 @@ block content
 				.ui.comments#commentList
 					.ui.dividing.header Comments
 					each comment in brand.comments
-						p.commentAuthor= comment.author.username + " - "
-							span.cinema.commentDate= brand.created.toDateString()
+						.comAuthDel
+							p.commentAuthor= comment.author.username + " - "
+								span.cinema.commentDate= brand.created.toDateString()
+							if currentUser && brand.author.id.equals(currentUser._id)
+								form(action="/brands/"+brand._id+"/comments/"+comment._id+"?_method=DELETE", method="POST").delComForm
+									button.ui.button.red.mini.deleteComment Delete
 						p= comment.text
-						
 						hr
 				form(action="/brands/"+brand._id+"/comments" , method="POST").ui.reply.form
 					.field
