@@ -18,8 +18,10 @@ block content
 									p= "I currently rank this at " + brand.rank + "/" + brands.length
 								.item.buttons
 									a(href="/brands/"+brand._id).ui.green.invert.button Discuss
-									a(href="/brands/"+brand._id+"/edit").ui.yellow.invert.button Edit
-									form(action="/brands/"+brand.id+"?_method=DELETE", method="POST").deleteBtnForm
-										button.ui.red.invert.button Delete
+									if currentUser && brand.author.id.equals(currentUser._id) 
+										a(href="/brands/"+brand._id+"/edit").ui.yellow.invert.button Edit
+										form(action="/brands/"+brand.id+"?_method=DELETE", method="POST").deleteBtnForm
+											button.ui.red.invert.button Delete
+									
 	include help
 
