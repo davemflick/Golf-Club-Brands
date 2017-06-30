@@ -32,8 +32,8 @@ router.post("/brands",  (req, res)=>{
 	}
 	let name = req.body.name;
 	let rank = req.body.rank;
-	let description = req.body.about
-	let newBrand = {name: name, image: image, rank: rank, author: author, description: description}
+	let about = req.body.about
+	let newBrand = {name: name, image: image, rank: rank, author: author, about: about}
 	Brand.create(newBrand, (err, brand)=>{
 		if(err){
 			alert("something went wrong on submit");
