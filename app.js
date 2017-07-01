@@ -7,6 +7,9 @@ var methodOverride = require("method-override");
 var passport = require("passport");
 var LocalStrategy = require("passport-local");
 
+//To get rid of mongoose promise warning
+mongoose.Promise = global.Promise;
+
 //Models
 var Brand = require("./models/brand");
 var Comment = require("./models/comments");
