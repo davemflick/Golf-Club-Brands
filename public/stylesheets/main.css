@@ -9,7 +9,7 @@ body.body{
 	text-align: center;
 	background-repeat: no-repeat;
 	height: 100vh;
-	padding-bottom: 0;
+	padding-bottom: 10px;
 }
 
 .mainContainer{
@@ -90,17 +90,11 @@ label.login {
 	margin-bottom: 20px;
 }
 
-.ui.comments {
-	text-align: left;
-}
-.commentContainer {
-	height: 100%;
-	display: block;
-}
 
 h1.golfBrands {
 	font-size: 4em;
 	color: #eee;
+	text-shadow: 2px 2px 1px rgba(0,0,0,.5);
 }
 
 .item.about{
@@ -118,9 +112,20 @@ h1.golfBrands {
 .ui.top.attached.segment {
 	border-radius: 25px;
 	padding: 30px 15px;
+	box-shadow: 3px 3px 1px 1px rgba(0,0,0,.5);
+	margin-bottom: 10px;
 }
 
 /*COMMENTS*/
+
+.ui.comments {
+	text-align: left;
+}
+.commentContainer {
+	height: 100%;
+	display: block;
+}
+
 .ui.orange.labled.submit.button.addComment {
 	margin-bottom: 5px;
 	float: left;
