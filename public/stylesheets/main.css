@@ -15,6 +15,7 @@ body.body{
 .mainContainer{
 	height: 100vh;
 	padding: 0;
+	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
 }
 
 .buffer {
@@ -65,19 +66,36 @@ body.body{
 
 
 /*LOGIN STYLE*/
-.ui.login{
-	margin: 20px auto 100px auto;
-}
-label.login {
-	font-size: 18px !important;
-}
 
-
-.ui.register{
-	margin: 20px auto 100px auto;
+.ui.form .inline.field>label, .ui.form .inline.field>p, .ui.form .inline.fields .field>label, .ui.form .inline.fields .field>p, .ui.form .inline.fields>label {
+	font-size: 18px;
+	color: #f6f6f6;
 }
 
+.ui.register, .ui.login{
+	margin: 20px auto 30px auto;
+	border: 2px solid rgba(0,0,0,0.5);
+	border-radius: 10px;
+	padding: 30px;
+	display: inline-block;
+	background-color: rgba(0,0,0,0.3);
+}
 
+.ui.teal.button {
+	margin: 0;
+	width: 100%;
+}
+.ui.button.green {
+	margin-top: 0;
+}
+
+.logRegHeader {
+	padding-top: 30px;
+	font-size: 2.9em;
+	color: #e5e5e5;
+	text-shadow: 2px 2px 1px rgba(0,0,0,0.2);
+}
+/*END OF LOGIN/REGISTER */
 
 .innerContainer {
 	width: 75%;

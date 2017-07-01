@@ -1,15 +1,17 @@
 extends layout
 
 block content
-	.buffer
-	h1 Register
+	h1.logRegHeader Register
 	.ui.register
 		form(action="/register", method="POST").ui.form
 			.field.inline
-				label.login Username
+				label.login.cred Username
 				input(type="text", name="username", placeholder="username")
 			.field.inline
-				label.login Password
+				label.login.cred Password
 				input(type="password", name="password", placeholder="password")
 			.field
 				input(type="submit").ui.button.inverse.teal
+
+	h4 Already Have an Account?
+	a(href="/register").ui.button.green Go to Login!

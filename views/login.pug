@@ -1,8 +1,7 @@
 extends layout
 
 block content
-	.buffer
-	h1.ui.huge.header Login
+	h1.logRegHeader Login
 	.ui.login
 		form(action="/login", method="POST").ui.form
 			.field.inline.loginpage
@@ -13,3 +12,5 @@ block content
 				input(type="password", name="password", placeholder="password")
 			.field
 				input(type="submit").ui.button.inverse.teal
+	h4 Don't Have an Account?
+	a(href="/register").ui.button.green Go to Register!
