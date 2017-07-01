@@ -8,12 +8,10 @@ block content
 			.ui.top.attached.segment
 				.ui.divided.items
 						.item.brandContainer
-							.image
+							.image.brandImage
 								img(src=brand.image)
 							.content
-								h3.header.huge= brand.name
-								.meta
-									span.cinema= brand.created.toDateString()
+								h3.brandTitle= brand.name 
 								.description
 									p= "Rank: " + brand.rank
 								.item.buttons
@@ -22,6 +20,7 @@ block content
 										a(href="/brands/"+brand._id+"/edit").ui.yellow.invert.button Edit
 										form(action="/brands/"+brand.id+"?_method=DELETE", method="POST").deleteBtnForm
 											button.ui.red.invert.button Delete
+								span.cinema= brand.created.toDateString()
 									
 	include help
 
